@@ -39,15 +39,15 @@ struct HomeView: View {
                 
                 
                 HStack {
-                    Text("Exclusive Offer")
+                    Text("Category")
                         .font(.system(size: 24, weight: .semibold))
                         .foregroundStyle(.black)
                     
                     Spacer()
                     
                     Text("View All")
-                        .font(.system(size: 16, weight: .medium))
-                        .foregroundStyle(.black)
+                        .font(.system(size: 14, weight: .medium))
+                        .foregroundStyle(.gray)
                 }
                 .padding(.horizontal, 20)
                 .padding(.vertical, 10)
@@ -55,56 +55,29 @@ struct HomeView: View {
                 // Exclusive offer products
                 
                 ScrollView(.horizontal, showsIndicators: false) {
-                    LazyHStack(spacing: -8) {
+                    LazyHStack(spacing: -24) {
                         ForEach (0...5, id:\.self) {
                             index in
                             
-                            VStack {
+                            HStack {
                                 Image("Jacket")
                                     .resizable()
                                     .scaledToFit()
-                                    .frame(width: 130, height: 130)
+                                    .frame(width: 40, height: 40)
                                 
                                 Spacer()
                                 
-                                Text("Modern Light Clothes")
+                                Text("Jackets")
                                     .font(.system(size: 16, weight: .semibold))
                                     .foregroundStyle(.black)
                                     .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
                                 
-                                Text("1pcs, price")
-                                    .font(.system(size: 14, weight: .semibold))
-                                    .foregroundStyle(.gray)
-                                    .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
-                                
-                                
-                                HStack {
-                                    Text("$127.90")
-                                        .font(.system(size: 16, weight: .bold))
-                                        .foregroundStyle(.black)
-                                        .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
-                                    
-                                    Spacer()
-                                    
-                                    Button {
-                                        didAddCart?()
-                                    } label: {
-                                        Image(systemName: "plus")
-                                            .resizable()
-                                            .scaledToFit()
-                                            .frame(width: 15, height: 15)
-                                            .accentColor(.white)
-                                    }
-                                    .frame(width: 40, height: 40)
-                                    .background(Color.black)
-                                    .cornerRadius(20)
-                                }
                                 
                             }
-                            .padding(15)
-                            .frame(width: 200, height: 280)
+                            .padding(10)
+                            .frame(width: 150, height: 50)
                             .overlay(
-                                RoundedRectangle(cornerRadius: 16)
+                                RoundedRectangle(cornerRadius: 5)
                                     .stroke(Color.gray.opacity(0.5), lineWidth: 1)
                             )
                         }
@@ -123,8 +96,8 @@ struct HomeView: View {
                     Spacer()
                     
                     Text("View All")
-                        .font(.system(size: 16, weight: .medium))
-                        .foregroundStyle(.black)
+                        .font(.system(size: 14, weight: .medium))
+                        .foregroundStyle(.gray)
                 }
                 .padding(.horizontal, 20)
                 .padding(.vertical, 10)
@@ -135,12 +108,48 @@ struct HomeView: View {
                             index in
                             
                             VStack {
+//                                HStack(alignment: .top) {
+//                                    Image("Jacket")
+//                                        .resizable()
+//                                        .scaledToFit()
+//                                        .frame(width: 130, height: 130)
+//                                    
+//                                    Spacer()
+//                                    
+//                                    Button {
+//                                        didAddCart?()
+//                                    } label: {
+//                                        Image(systemName: "heart.fill")
+//                                            .resizable()
+//                                            .scaledToFit()
+//                                            .frame(width: 18, height: 18)
+//                                            .accentColor(.white)
+//                                    }
+//                                    .frame(width: 40, height: 40)
+//                                    .background(Color.pink)
+//                                    .cornerRadius(20)
+//                                    
+//                                    
+//                                }
                                 Image("Jacket")
                                     .resizable()
                                     .scaledToFit()
                                     .frame(width: 130, height: 130)
                                 
                                 Spacer()
+                                
+//                                Button {
+//                                    didAddCart?()
+//                                } label: {
+//                                    Image(systemName: "plus")
+//                                        .resizable()
+//                                        .scaledToFit()
+//                                        .frame(width: 15, height: 15)
+//                                        .accentColor(.white)
+//                                }
+//                                .frame(width: 40, height: 40)
+//                                .background(Color.black)
+//                                .cornerRadius(20)
                                 
                                 Text("Modern Light Clothes")
                                     .font(.system(size: 16, weight: .semibold))
@@ -179,7 +188,7 @@ struct HomeView: View {
                             .padding(15)
                             .frame(width: 200, height: 280)
                             .overlay(
-                                RoundedRectangle(cornerRadius: 16)
+                                RoundedRectangle(cornerRadius: 8)
                                     .stroke(Color.gray.opacity(0.5), lineWidth: 1)
                             )
                         }
@@ -196,8 +205,8 @@ struct HomeView: View {
                     Spacer()
                     
                     Text("View All")
-                        .font(.system(size: 16, weight: .medium))
-                        .foregroundStyle(.black)
+                        .font(.system(size: 14, weight: .medium))
+                        .foregroundStyle(.gray)
                 }
                 .padding(.horizontal, 20)
                 .padding(.vertical, 10)
@@ -252,7 +261,7 @@ struct HomeView: View {
                             .padding(15)
                             .frame(width: 200, height: 280)
                             .overlay(
-                                RoundedRectangle(cornerRadius: 16)
+                                RoundedRectangle(cornerRadius: 8)
                                     .stroke(Color.gray.opacity(0.5), lineWidth: 1)
                             )
                         }
