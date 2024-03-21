@@ -46,6 +46,11 @@ struct NavBarView: View {
                 .tag(4)
         }
         .accentColor(.black)
+        
+        .navigationTitle("")
+        .navigationBarBackButtonHidden(true)
+        .navigationBarHidden(true)
+        .ignoresSafeArea()
     }
 }
 
