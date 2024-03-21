@@ -15,6 +15,8 @@
 		004FA3CD2BA99D3600517410 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 004FA3CC2BA99D3600517410 /* Launch Screen.storyboard */; };
 		004FA3CF2BA99EC500517410 /* ButtonUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004FA3CE2BA99EC500517410 /* ButtonUI.swift */; };
 		004FA3D12BA99F3800517410 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004FA3D02BA99F3800517410 /* SignInView.swift */; };
+		260123912BABECB400B0F9E7 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260123902BABECB400B0F9E7 /* HomeViewModel.swift */; };
+		260123932BABF56800B0F9E7 /* SearchTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260123922BABF56800B0F9E7 /* SearchTextField.swift */; };
 		265CC6122BA9BA0F00EF8B5C /* UIExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265CC6112BA9BA0F00EF8B5C /* UIExtension.swift */; };
 		265CC6142BA9BECE00EF8B5C /* NavBarView in Sources */ = {isa = PBXBuildFile; fileRef = 265CC6132BA9BECE00EF8B5C /* NavBarView */; };
 		265CC6162BA9C2B700EF8B5C /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265CC6152BA9C2B700EF8B5C /* HomeView.swift */; };
@@ -35,6 +37,8 @@
 		004FA3CC2BA99D3600517410 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		004FA3CE2BA99EC500517410 /* ButtonUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonUI.swift; sourceTree = "<group>"; };
 		004FA3D02BA99F3800517410 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
+		260123902BABECB400B0F9E7 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeViewModel.swift; path = ../../../HomeViewModel.swift; sourceTree = "<group>"; };
+		260123922BABF56800B0F9E7 /* SearchTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTextField.swift; sourceTree = "<group>"; };
 		265CC6112BA9BA0F00EF8B5C /* UIExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIExtension.swift; sourceTree = "<group>"; };
 		265CC6132BA9BECE00EF8B5C /* NavBarView */ = {isa = PBXFileReference; lastKnownFileType = text; path = NavBarView; sourceTree = "<group>"; };
 		265CC6152BA9C2B700EF8B5C /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -123,6 +127,7 @@
 		004FA3C52BA99C1E00517410 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				260123902BABECB400B0F9E7 /* HomeViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -132,6 +137,7 @@
 			children = (
 				004FA3CE2BA99EC500517410 /* ButtonUI.swift */,
 				265CC6112BA9BA0F00EF8B5C /* UIExtension.swift */,
+				260123922BABF56800B0F9E7 /* SearchTextField.swift */,
 			);
 			path = UIComponents;
 			sourceTree = "<group>";
@@ -219,10 +225,12 @@
 				265CC6142BA9BECE00EF8B5C /* NavBarView in Sources */,
 				265CC6122BA9BA0F00EF8B5C /* UIExtension.swift in Sources */,
 				265CC61E2BA9C30C00EF8B5C /* ProfileView.swift in Sources */,
+				260123932BABF56800B0F9E7 /* SearchTextField.swift in Sources */,
 				004FA3CA2BA99CE400517410 /* WelcomeView.swift in Sources */,
 				004FA3B62BA99B8D00517410 /* ClothingAppNewApp.swift in Sources */,
 				265CC61C2BA9C2F600EF8B5C /* CartView.swift in Sources */,
 				265CC6162BA9C2B700EF8B5C /* HomeView.swift in Sources */,
+				260123912BABECB400B0F9E7 /* HomeViewModel.swift in Sources */,
 				265CC6202BA9C35E00EF8B5C /* NavBarView.swift in Sources */,
 				004FA3CF2BA99EC500517410 /* ButtonUI.swift in Sources */,
 				265CC61A2BA9C2E800EF8B5C /* FavoriteView.swift in Sources */,
