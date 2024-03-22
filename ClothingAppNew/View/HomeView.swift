@@ -13,6 +13,9 @@ struct HomeView: View {
 //    @State var titleAll: String = "View All"
 //    @State var placeholder: String = "placeholder"
 //    @Binding var txt: String
+    @State private var search: String = ""
+    @State private var currentIndex = 0
+    var slides: [String] = ["banner 2","banner 3","banner 1", "banner 3"]
     
     var didAddCart: ( ()->() )?
     
@@ -30,14 +33,52 @@ struct HomeView: View {
                             .font(.system(size: 16, weight: .medium))
                             .foregroundStyle(.black)
                     }
+                    .ignoresSafeArea()
                     
                     // search bar
+                    HStack {
+                        HStack {
+                            Image(systemName: "magnifyingglass")
+                                .padding(.leading)
+                            
+                            TextField("Search For Clothes",text: $search)
+                                .padding()
+                        }
+                        .background(Color("search color"))
+                        .cornerRadius(6)
+                        
+                        Image(systemName: "camera")
+                            .padding()
+                            .foregroundColor(.white)
+                            .background(Color.black)
+                            .cornerRadius(6)
+                    }
+                    .padding(.horizontal, 20)
+                    .padding(.vertical, 10)
+                    
                 }
                 .padding(.top)
                 
                 // advertistments
+                ZStack(alignment: .bottomLeading) {
+                    ZStack(alignment: .trailing) {
+                        Image("Banner")
+                            .resizable()
+                            .frame(width: .infinity, height: 180)
+                            .scaledToFit()
+                    }
+//                    HStack {
+//                        ForEach(0..<slides.count) {index in
+//                                Circle()
+//                                .fill(self.currentIndex == index ? Color("gray") : Color("black"))
+//                                .frame(width: 10, height: <#T##CGFloat?#>)
+//                        }
+//                    }
+                    .padding(.horizontal, 20)
+                    .padding(.vertical, 10)
+                }
                 
-                
+                // Category Section
                 HStack {
                     Text("Category")
                         .font(.system(size: 24, weight: .semibold))
@@ -52,7 +93,6 @@ struct HomeView: View {
                 .padding(.horizontal, 20)
                 .padding(.vertical, 10)
                 
-                // Exclusive offer products
                 
                 ScrollView(.horizontal, showsIndicators: false) {
                     LazyHStack(spacing: -24) {
@@ -65,20 +105,20 @@ struct HomeView: View {
                                     .scaledToFit()
                                     .frame(width: 40, height: 40)
                                 
-                                Spacer()
-                                
-                                Text("Jackets")
-                                    .font(.system(size: 16, weight: .semibold))
-                                    .foregroundStyle(.black)
-                                    .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
+//                                Spacer()
+//                                
+//                                Text("Jackets")
+//                                    .font(.system(size: 16, weight: .semibold))
+//                                    .foregroundStyle(.black)
+//                                    .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
                                 
                                 
                             }
                             .padding(10)
-                            .frame(width: 150, height: 50)
+                            .frame(width: 60, height: 60)
                             .overlay(
-                                RoundedRectangle(cornerRadius: 5)
-                                    .stroke(Color.gray.opacity(0.5), lineWidth: 1)
+                                RoundedRectangle(cornerRadius: 50)
+                                    .foregroundColor(Color("Color 1").opacity(0.2))
                             )
                         }
                         .padding(.horizontal, 20)

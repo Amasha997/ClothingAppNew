@@ -25,6 +25,7 @@
 		265CC61C2BA9C2F600EF8B5C /* CartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265CC61B2BA9C2F600EF8B5C /* CartView.swift */; };
 		265CC61E2BA9C30C00EF8B5C /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265CC61D2BA9C30C00EF8B5C /* ProfileView.swift */; };
 		265CC6202BA9C35E00EF8B5C /* NavBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265CC61F2BA9C35E00EF8B5C /* NavBarView.swift */; };
+		26F895652BAD4DC9005CEC9D /* ProductDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F895642BAD4DC9005CEC9D /* ProductDetailsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +48,7 @@
 		265CC61B2BA9C2F600EF8B5C /* CartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartView.swift; sourceTree = "<group>"; };
 		265CC61D2BA9C30C00EF8B5C /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		265CC61F2BA9C35E00EF8B5C /* NavBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavBarView.swift; sourceTree = "<group>"; };
+		26F895642BAD4DC9005CEC9D /* ProductDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +121,7 @@
 				265CC61B2BA9C2F600EF8B5C /* CartView.swift */,
 				265CC61D2BA9C30C00EF8B5C /* ProfileView.swift */,
 				265CC61F2BA9C35E00EF8B5C /* NavBarView.swift */,
+				26F895642BAD4DC9005CEC9D /* ProductDetailsView.swift */,
 				004FA3C82BA99CA300517410 /* Login */,
 			);
 			path = View;
@@ -225,6 +228,7 @@
 				265CC6142BA9BECE00EF8B5C /* NavBarView in Sources */,
 				265CC6122BA9BA0F00EF8B5C /* UIExtension.swift in Sources */,
 				265CC61E2BA9C30C00EF8B5C /* ProfileView.swift in Sources */,
+				26F895652BAD4DC9005CEC9D /* ProductDetailsView.swift in Sources */,
 				260123932BABF56800B0F9E7 /* SearchTextField.swift in Sources */,
 				004FA3CA2BA99CE400517410 /* WelcomeView.swift in Sources */,
 				004FA3B62BA99B8D00517410 /* ClothingAppNewApp.swift in Sources */,
