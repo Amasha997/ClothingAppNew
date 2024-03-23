@@ -16,7 +16,7 @@ struct ProductDetailsView: View {
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .edgesIgnoringSafeArea(.top)
-//                        .frame(width: 800, height: 600)
+//                        .frame(width: 500, height: 400)
                     
                     DescriptionView()
                         .offset(y: -46)

@@ -10,7 +10,7 @@ import SwiftUI
 struct NavBarView: View {
     var body: some View {
         TabView() {
-            HomeView()
+            HomeView(selectedProduct: MockData.sampleProduct)
                 .tabItem {
                     Image(systemName: "house")
                     Text("Home")
