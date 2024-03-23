@@ -57,19 +57,6 @@ struct ProductListCell: View {
                 .cornerRadius(20)
             }
             
-//            VStack(alignment: .leading, spacing: 5){
-//                Text(product.name)
-//                    .font(.system(size: 15))
-//                    .fontWeight(.medium)
-//                    .frame(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-//                Text("$\(product.price,specifier: "%.2f")")
-//                    .foregroundStyle(.secondary)
-//                    .fontWeight(.semibold)
-//                    .frame(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-//
-//            }
-//            .padding(.leading)
-//            .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
         
         }
         .padding(15)

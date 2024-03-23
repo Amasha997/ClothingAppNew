@@ -46,6 +46,12 @@ struct ProductDetailsView: View {
             
             }
             .edgesIgnoringSafeArea(.bottom)
+            .navigationBarBackButtonHidden(true)
+            .navigationBarItems(leading:
+                                    Image(systemName: "chevron.backward")
+                .padding(.all, 12)
+                .background(Color.white)
+                .cornerRadius(/*@START_MENU_TOKEN@*/3.0/*@END_MENU_TOKEN@*/))
         }
     }
 }

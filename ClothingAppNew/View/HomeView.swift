@@ -13,6 +13,7 @@ struct HomeView: View {
     @State private var isShowingDetails: Bool = false
     @State var selectedProduct: Product?
     @State private var search: String = ""
+    @State var isProductTapped = false
 
 
     let columns : [GridItem] = [GridItem(.flexible()),GridItem(.flexible())]
@@ -24,99 +25,101 @@ struct HomeView: View {
             
             
             NavigationStack{
-//Search
+//------------------------------------------Search---------------------------------------
                 VStack {
-                                   HStack {
-                                       Image("location icon")
-                                           .resizable()
-                                           .scaledToFit()
-                                           .frame(width: 25)
+                    HStack {
+                        Image("location icon")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 25)
                
-                                       Text("Dhaka, banassre")
-                                           .font(.system(size: 16, weight: .medium))
-                                           .foregroundStyle(.black)
-                                   }
-                                   .ignoresSafeArea()
+                        Text("Dhaka, banassre")
+                            .font(.system(size: 16, weight: .medium))
+                            .foregroundStyle(.black)
+                    }
+                    .ignoresSafeArea()
                
-                                   // search bar
-                                   HStack {
-                                       HStack {
-                                           Image(systemName: "magnifyingglass")
-                                               .padding(.leading)
+//------------------------------------------Search---------------------------------------
+                    HStack {
+                        HStack {
+                            Image(systemName: "magnifyingglass")
+                                .padding(.leading)
                
-                                           TextField("Search For Clothes",text: $search)
-                                               .padding()
-                                       }
-                                       .background(Color("search color"))
-                                       .cornerRadius(6)
+                            TextField("Search For Clothes",text: $search)
+                                .padding()
+                            }
+                            .background(Color("search color"))
+                            .cornerRadius(6)
                
-                                       Image(systemName: "camera")
-                                           .padding()
-                                           .foregroundColor(.white)
-                                           .background(Color.black)
-                                           .cornerRadius(6)
-                                   }
-                                   .padding(.horizontal, 20)
-                                   .padding(.vertical, 10)
+                            Image(systemName: "camera")
+                            .padding()
+                            .foregroundColor(.white)
+                            .background(Color.black)
+                            .cornerRadius(6)
+                        }
+                        .padding(.horizontal, 20)
+                        .padding(.vertical, 10)
                
-                               }
-                               .padding(.top)
+                    }
+                    .padding(.top)
                 
-//Search END
+//------------------------------------------Search End---------------------------------------
         
                 
                 ScrollView{
                     
- //Advetise
+//------------------------------------------Advertise View---------------------------------------
                     BannerView()
-  //Advertise END
                     
-// Category
+//------------------------------------------Advertise View End---------------------------------------
+                    
+                    
+//------------------------------------------Category Section---------------------------------------
                     
                     
                     HStack {
-                                       Text("Category")
-                                           .font(.system(size: 24, weight: .semibold))
-                                           .foregroundStyle(.black)
+                        Text("Category")
+                            .font(.system(size: 24, weight: .semibold))
+                            .foregroundStyle(.black)
                    
-                                       Spacer()
+                        Spacer()
                    
-                                       Text("View All")
-                                           .font(.system(size: 14, weight: .medium))
-                                           .foregroundStyle(.gray)
-                                   }
-                                   .padding(.horizontal, 20)
-                                   .padding(.vertical, 10)
+                        Text("View All")
+                            .font(.system(size: 14, weight: .medium))
+                            .foregroundStyle(.gray)
+                    }
+                    .padding(.horizontal, 20)
+                    .padding(.vertical, 10)
                    
                    
-                                   ScrollView(.horizontal, showsIndicators: false) {
-                                       LazyHStack(spacing: -24) {
-                                           ForEach (0...5, id:\.self) {
-                                               index in
+                    ScrollView(.horizontal, showsIndicators: false) {
+                        LazyHStack(spacing: -24) {
+                            ForEach (0...5, id:\.self) {
+                                index in
                    
-                                               HStack {
-                                                   Image("Jacket")
-                                                       .resizable()
-                                                       .scaledToFit()
-                                                       .frame(width: 40, height: 40)
+                        HStack {
+                            Image("Jacket")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 40, height: 40)
                 
                    
-                                               }
-                                               .padding(10)
-                                               .frame(width: 60, height: 60)
-                                               .overlay(
-                                                   RoundedRectangle(cornerRadius: 50)
-                                                       .foregroundColor(Color("Color 1").opacity(0.2))
-                                               )
-                                           }
-                                           .padding(.horizontal, 20)
-                                           .padding(.vertical, 4)
-                                       }
-                                   }
+                        }
+                        .padding(10)
+                        .frame(width: 60, height: 60)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 50)
+                                .foregroundColor(Color("Color 1").opacity(0.2))
+                            )
+                        }
+                        .padding(.horizontal, 20)
+                        .padding(.vertical, 4)
+                        }
+                    }
               
+//------------------------------------------Category Section End---------------------------------------
                     
-                    
-// Category ENDs
+
                     
 //New Arrival
                     HStack {
@@ -138,9 +141,14 @@ struct HomeView: View {
                             ForEach(viewModel.products, id: \.id){product in
                                 ProductListCell(product: product)
                                     .onTapGesture {
-                                        viewModel.selectedProduct = product
-                                        viewModel.isShowingDetails = true
+//                                        viewModel.selectedProduct = product
+//                                        viewModel.isShowingDetails = true
+                                        isProductTapped.toggle()
                                     }
+                                NavigationLink("", destination: ProductDetailsView(), isActive: $isProductTapped)
+                                
+                                    .navigationBarHidden(true)
+                                    .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
                             }
                         }
                         .frame(height: 300)
@@ -186,7 +194,7 @@ struct HomeView: View {
 // Products
                     
                     HStack {
-                        Text("Products")
+                        Text("Most Popular")
                             .font(.system(size: 24, weight: .semibold))
                             .foregroundStyle(.black)
                     
@@ -196,6 +204,8 @@ struct HomeView: View {
                             .font(.system(size: 14, weight: .medium))
                             .foregroundStyle(.gray)
                     }
+                    .padding(.horizontal, 20)
+                    .padding(.vertical, 10)
                     
                     LazyVGrid(columns:columns){
                         ForEach(viewModel.products, id: \.id){product in
@@ -204,8 +214,11 @@ struct HomeView: View {
                                     viewModel.selectedProduct = product
                                     viewModel.isShowingDetails = true
                                 }
-                                        }
-                                    }
+                        }
+                    }
+                    .padding(.horizontal, 20)
+                    .padding(.vertical, 10)
+                    
 // Products END
                     
                 }
@@ -213,22 +226,26 @@ struct HomeView: View {
                 
                 
             }
+//            .padding(.top)
+            
             .onAppear{
                 viewModel.getProducts()
             }
-            .blur(radius: viewModel.isShowingDetails ? 20 : 0)
+//            .blur(radius: viewModel.isShowingDetails ? 20 : 0)
             
 
         }
-        .ignoresSafeArea()
+        
+        
         .alert(item: $viewModel.alertItem){ alertItem in
             Alert(title: alertItem.title,
                   message: alertItem.message,
                   dismissButton: alertItem.dismissButton)
         }
-            
+//        .ignoresSafeArea()
             
         }
+        
     
     
   
@@ -244,7 +261,7 @@ struct BannerView: View {
             ZStack(alignment: .trailing) {
                 Image("Banner")
                     .resizable()
-                    .frame(width: .infinity, height: 180)
+//                    .frame(width: .infinity, height: 180)
                     .scaledToFit()
             }
             .padding(.horizontal, 20)
