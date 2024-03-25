@@ -54,6 +54,7 @@ struct ProductDetailsView: View {
                 .cornerRadius(/*@START_MENU_TOKEN@*/3.0/*@END_MENU_TOKEN@*/))
         }
     }
+        
 }
 
 #Preview {

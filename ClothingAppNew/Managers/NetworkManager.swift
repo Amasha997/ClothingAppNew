@@ -1,8 +1,9 @@
+
 //
 //  NetworkManager.swift
-//  ClothingAppNew
+//  ClothingApp2
 //
-//  Created by NIBMPC04PC06 on 2024-03-23.
+//  Created by Chamod Dilushanka on 2024-03-18.
 //
 
 import UIKit
@@ -11,12 +12,10 @@ final class NetworkManager{
     
     static let shared = NetworkManager()
     private let cashe = NSCache<NSString, UIImage>()
+        
+    private let productURL = "https://clothingappapi.onrender.com/products"
     
-    static let baseURL = "https://seanallen-course-backend.herokuapp.com/swiftui-fundamentals/"
-    
-    private let productURL = baseURL + "appetizers"
-    
-    
+//    private let productURL = "https://seanallen-course-backend.herokuapp.com/swiftui-fundamentals/appetizers"
     private init(){}
     
     func getProducts(completed: @escaping (Result<[Product], PError>) -> Void){
@@ -43,8 +42,10 @@ final class NetworkManager{
             
             do{
                 let decoder = JSONDecoder()
-                let decodResponse =  try decoder.decode(ProductResponse.self, from: data)
-                completed(.success(decodResponse.request))
+                let products =  try decoder.decode([Product].self, from: data)
+                print(data)
+                
+                completed(.success(products))
             } catch{
                 completed(.failure(.invalidData))
             }

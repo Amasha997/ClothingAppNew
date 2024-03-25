@@ -8,9 +8,13 @@
 import SwiftUI
 
 struct NavBarView: View {
+    
+    @State var selectedTab: Int = 0
+    @State var category: String = ""
+    
     var body: some View {
         TabView() {
-            HomeView(selectedProduct: MockData.sampleProduct)
+            HomeView(selectedCategory: $category, selectedTab: $selectedTab)
                 .tabItem {
                     Image(systemName: "house")
                     Text("Home")

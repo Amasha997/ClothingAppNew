@@ -14,6 +14,8 @@ struct HomeView: View {
     @State var selectedProduct: Product?
     @State private var search: String = ""
     @State var isProductTapped = false
+    @Binding var selectedCategory: String
+    @Binding var selectedTab: Int
 
 
     let columns : [GridItem] = [GridItem(.flexible()),GridItem(.flexible())]
@@ -94,19 +96,32 @@ struct HomeView: View {
                    
                     ScrollView(.horizontal, showsIndicators: false) {
                         LazyHStack(spacing: -24) {
-                            ForEach (0...5, id:\.self) {
-                                index in
+                            
+                            let uniqueCategories = viewModel.getUniqueCategories(from: viewModel.products)
+                            ForEach (uniqueCategories.sorted(), id:\.self) {
+                                category in
                    
                         HStack {
-                            Image("Jacket")
+                            Image("Shirt")
                                 .resizable()
                                 .scaledToFit()
                                 .frame(width: 40, height: 40)
+                            
+                
+                            
+                            VStack {
+                                Button(action: {
+                                    selectedCategory = category;
+                                }, label: {
+                                    Text(category)
+                                        .font(.system(size: 15))
+                                })
+                            }
                 
                    
                         }
                         .padding(10)
-                        .frame(width: 60, height: 60)
+                        .frame(width: 120, height: 60)
                         .overlay(
                             RoundedRectangle(cornerRadius: 50)
                                 .foregroundColor(Color("Color 1").opacity(0.2))
@@ -137,7 +152,7 @@ struct HomeView: View {
                     .padding(.vertical, 10)
                     
                     ScrollView(.horizontal, showsIndicators: false){
-                        LazyHStack(spacing: 15){
+                        LazyHStack(spacing: 10){
                             ForEach(viewModel.products, id: \.id){product in
                                 ProductListCell(product: product)
                                     .onTapGesture {
@@ -175,7 +190,7 @@ struct HomeView: View {
                     .padding(.vertical, 10)
                     
                     ScrollView(.horizontal, showsIndicators: false){
-                        LazyHStack(spacing: 15){
+                        LazyHStack(spacing: 20){
                             ForEach(viewModel.products, id: \.id){product in
                                 ProductListCell(product: product)
                                     .onTapGesture {
@@ -252,7 +267,7 @@ struct HomeView: View {
 }
 
 #Preview {
-    HomeView(selectedProduct: MockData.sampleProduct)
+    HomeView(selectedCategory: .constant("sample"), selectedTab: .constant(0))
 }
 
 struct BannerView: View {
