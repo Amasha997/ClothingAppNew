@@ -10,10 +10,7 @@ struct HomeView: View {
     
     @StateObject var viewModel = ProductListViewModel()
     @State private var isList: Bool = false
-    @State private var isShowingDetails: Bool = false
-    @State var selectedProduct: Product?
     @State private var search: String = ""
-    @State var isProductTapped = false
     @Binding var selectedCategory: String
     @Binding var selectedTab: Int
 
@@ -102,30 +99,28 @@ struct HomeView: View {
                                 category in
                    
                         HStack {
-                            Image("Shirt")
-                                .resizable()
-                                .scaledToFit()
-                                .frame(width: 40, height: 40)
+//                            Image("Shirt")
+//                                .resizable()
+//                                .scaledToFit()
+//                                .frame(width: 40, height: 40)
                             
-                
-                            
-                            VStack {
                                 Button(action: {
                                     selectedCategory = category;
                                 }, label: {
                                     Text(category)
                                         .font(.system(size: 15))
                                 })
-                            }
+                            
                 
                    
                         }
                         .padding(10)
                         .frame(width: 120, height: 60)
                         .overlay(
-                            RoundedRectangle(cornerRadius: 50)
-                                .foregroundColor(Color("Color 1").opacity(0.2))
+                            RoundedRectangle(cornerRadius: 10)
+                                .foregroundColor(Color("primary color").opacity(0.1))
                             )
+                        .foregroundColor(Color("primary color"))
                         }
                         .padding(.horizontal, 20)
                         .padding(.vertical, 4)
@@ -156,14 +151,10 @@ struct HomeView: View {
                             ForEach(viewModel.products, id: \.id){product in
                                 ProductListCell(product: product)
                                     .onTapGesture {
-//                                        viewModel.selectedProduct = product
-//                                        viewModel.isShowingDetails = true
-                                        isProductTapped.toggle()
+                                        viewModel.selectedProduct = product
+                                        viewModel.isShowingDetails = true
                                     }
-                                NavigationLink("", destination: ProductDetailsView(), isActive: $isProductTapped)
-                                
-                                    .navigationBarHidden(true)
-                                    .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
+                            
                             }
                         }
                         .frame(height: 300)
@@ -246,8 +237,10 @@ struct HomeView: View {
             .onAppear{
                 viewModel.getProducts()
             }
-//            .blur(radius: viewModel.isShowingDetails ? 20 : 0)
-            
+            .blur(radius: viewModel.isShowingDetails ? 100 : 0)
+            if viewModel.isShowingDetails{
+                ProductDetailsView(product: viewModel.selectedProduct!, isShowingDetails: $viewModel.isShowingDetails)
+            }
 
         }
         
@@ -258,10 +251,10 @@ struct HomeView: View {
                   dismissButton: alertItem.dismissButton)
         }
 //        .ignoresSafeArea()
-            
+        
+      
         }
         
-    
     
   
 }

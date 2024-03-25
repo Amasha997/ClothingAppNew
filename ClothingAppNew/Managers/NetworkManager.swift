@@ -1,10 +1,10 @@
-
 //
 //  NetworkManager.swift
-//  ClothingApp2
+//  ClothingAppNew
 //
-//  Created by Chamod Dilushanka on 2024-03-18.
+//  Created by NIBMPC04PC06 on 2024-03-25.
 //
+
 
 import UIKit
 
