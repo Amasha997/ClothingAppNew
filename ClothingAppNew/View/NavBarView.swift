@@ -21,7 +21,7 @@ struct NavBarView: View {
                 }
                 .tag(0)
             
-            ExploreView()
+            ExploreView(selectedProduct: MockData.sampleProduct, selectedCategory: $category)
                 .tabItem {
                     Image(systemName: "doc.text")
                     Text("Explore")

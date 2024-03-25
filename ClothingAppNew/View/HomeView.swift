@@ -36,7 +36,8 @@ struct HomeView: View {
                             .font(.system(size: 16, weight: .medium))
                             .foregroundStyle(.black)
                     }
-                    .ignoresSafeArea()
+                   // .ignoresSafeArea()
+                    
                
 //------------------------------------------Search---------------------------------------
                     HStack {
@@ -57,10 +58,10 @@ struct HomeView: View {
                             .cornerRadius(6)
                         }
                         .padding(.horizontal, 20)
-                        .padding(.vertical, 10)
+                        
                
-                    }
-                    .padding(.top)
+                }.padding(.top,-80)
+                   
                 
 //------------------------------------------Search End---------------------------------------
         
@@ -106,6 +107,7 @@ struct HomeView: View {
                             
                                 Button(action: {
                                     selectedCategory = category;
+                                    selectedTab = 1
                                 }, label: {
                                     Text(category)
                                         .font(.system(size: 15))
@@ -116,11 +118,14 @@ struct HomeView: View {
                         }
                         .padding(10)
                         .frame(width: 120, height: 60)
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 10)
-                                .foregroundColor(Color("primary color").opacity(0.1))
-                            )
-                        .foregroundColor(Color("primary color"))
+//                        .overlay(
+//                            RoundedRectangle(cornerRadius: 10)
+//                                .foregroundColor(Color("primary color").opacity(0.1))
+//                            )
+//                        .foregroundColor(Color("primary color"))
+                                
+                        .background(.secondary.opacity(0.1))
+                        .clipShape(RoundedRectangle(cornerRadius: 30))
                         }
                         .padding(.horizontal, 20)
                         .padding(.vertical, 4)
@@ -222,7 +227,7 @@ struct HomeView: View {
                                 }
                         }
                     }
-                    .padding(.horizontal, 20)
+                    
                     .padding(.vertical, 10)
                     
 // Products END
