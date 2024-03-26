@@ -17,7 +17,7 @@ struct ExploreView: View {
     
     var filteredCategory: [Product] {
         guard !selectedCategory.isEmpty else {return viewModel.products}
-        return viewModel.products.filter{ $0.category.localizedCaseInsensitiveContains(searchTerm)}
+        return viewModel.products.filter{ $0.category.localizedCaseInsensitiveContains(selectedCategory)}
     }
     
     var filteredProducts: [Product] {
@@ -46,7 +46,7 @@ struct ExploreView: View {
                                         }
                                     }
                 }
-                .navigationTitle("Explore")
+                .navigationTitle(selectedCategory.isEmpty ? "Explore" : selectedCategory)
                 .disabled(viewModel.isShowingDetails)
                 
                 

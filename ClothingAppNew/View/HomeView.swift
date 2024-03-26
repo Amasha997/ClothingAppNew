@@ -54,7 +54,7 @@ struct HomeView: View {
                             Image(systemName: "camera")
                             .padding()
                             .foregroundColor(.white)
-                            .background(Color.black)
+                            .background(Color("primary color"))
                             .cornerRadius(6)
                         }
                         .padding(.horizontal, 20)
@@ -126,6 +126,7 @@ struct HomeView: View {
                                 
                         .background(.secondary.opacity(0.1))
                         .clipShape(RoundedRectangle(cornerRadius: 30))
+                        .foregroundStyle(Color("primary color"))
                         }
                         .padding(.horizontal, 20)
                         .padding(.vertical, 4)
@@ -152,8 +153,8 @@ struct HomeView: View {
                     .padding(.vertical, 10)
                     
                     ScrollView(.horizontal, showsIndicators: false){
-                        LazyHStack(spacing: 10){
-                            ForEach(viewModel.products, id: \.id){product in
+                        LazyHStack(spacing: 38){
+                            ForEach(viewModel.products.shuffled().prefix(5), id: \.id){product in
                                 ProductListCell(product: product)
                                     .onTapGesture {
                                         viewModel.selectedProduct = product
@@ -186,8 +187,8 @@ struct HomeView: View {
                     .padding(.vertical, 10)
                     
                     ScrollView(.horizontal, showsIndicators: false){
-                        LazyHStack(spacing: 20){
-                            ForEach(viewModel.products, id: \.id){product in
+                        LazyHStack(spacing: 38){
+                            ForEach(viewModel.products.shuffled().prefix(5), id: \.id){product in
                                 ProductListCell(product: product)
                                     .onTapGesture {
                                         viewModel.selectedProduct = product
@@ -218,7 +219,7 @@ struct HomeView: View {
                     .padding(.horizontal, 20)
                     .padding(.vertical, 10)
                     
-                    LazyVGrid(columns:columns){
+                    LazyVGrid(columns:columns, spacing: 20){
                         ForEach(viewModel.products, id: \.id){product in
                                             ProductListCell(product: product)
                                 .onTapGesture {

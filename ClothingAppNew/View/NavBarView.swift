@@ -10,18 +10,18 @@ import SwiftUI
 struct NavBarView: View {
     
     @State var selectedTab: Int = 0
-    @State var category: String = ""
+    @State var selectedCategory: String = ""
     
     var body: some View {
-        TabView() {
-            HomeView(selectedCategory: $category, selectedTab: $selectedTab)
+        TabView(selection: $selectedTab) {
+            HomeView(selectedCategory: $selectedCategory, selectedTab: $selectedTab)
                 .tabItem {
                     Image(systemName: "house")
                     Text("Home")
                 }
                 .tag(0)
             
-            ExploreView(selectedProduct: MockData.sampleProduct, selectedCategory: $category)
+            ExploreView(selectedProduct: MockData.sampleProduct, selectedCategory: $selectedCategory)
                 .tabItem {
                     Image(systemName: "doc.text")
                     Text("Explore")

@@ -28,16 +28,10 @@ struct WelcomeView: View {
                     .multilineTextAlignment(.center)
                     .padding(.bottom, 20)
                 
-//                NavigationLink {
-//                    SignInView()
-//                } label: {
-//                    ButtonUI(title: "Get Started") {
-//                        
-//                    }
-//                }
+
                 
                 NavigationLink {
-                    SignInView()
+                    NavBarView()
                 } label: {
                     Button {
                         
@@ -51,17 +45,6 @@ struct WelcomeView: View {
                     .background(Color.white)
                     .cornerRadius(5)
                 }
-//                Button {
-//                    
-//                } label: {
-//                    Text("Get Startered")
-//                        .font(.system(size: 18, weight: .semibold))
-//                        .foregroundStyle(.black)
-//                        .multilineTextAlignment(.center)
-//                }
-//                .frame(minWidth: 0, maxWidth: .infinity, minHeight: 60, maxHeight: 60)
-//                .background(Color.white)
-//                .cornerRadius(5)
                 
                 Spacer()
                     .frame(height: 60)
