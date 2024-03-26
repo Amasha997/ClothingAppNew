@@ -39,6 +39,7 @@ struct ExploreView: View {
                     LazyVGrid(columns:columns){
                         ForEach(filteredProducts, id: \.id){product in
                                             ProductListCell(product: product)
+                                .listRowSeparator(.hidden)
                                 .onTapGesture {
                                     viewModel.selectedProduct = product
                                     viewModel.isShowingDetails = true

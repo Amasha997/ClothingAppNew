@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct WelcomeView: View {
+    
+//    var order = Order()
+    
     var body: some View {
         ZStack {
             Image("Image1")
@@ -31,7 +34,7 @@ struct WelcomeView: View {
 
                 
                 NavigationLink {
-                    NavBarView()
+//                    NavBarView().environmentObject(order)
                 } label: {
                     Button {
                         

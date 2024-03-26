@@ -10,6 +10,7 @@ import SwiftUI
 
 struct ProductListCell: View {
     
+    @EnvironmentObject var order: Order
     let product: Product
     
     var body: some View {
@@ -36,7 +37,7 @@ struct ProductListCell: View {
                 
             
             HStack {
-                Text("$\(product.price,specifier: "%.2f")")
+                Text("Rs \(product.price,specifier: "%.2f")")
                     .font(.system(size: 16, weight: .bold))
                     .foregroundStyle(.black)
                     .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
@@ -44,7 +45,7 @@ struct ProductListCell: View {
                 Spacer()
                 
                 Button {
-                    
+                    order.add(product)
                 } label: {
                     Image(systemName: "plus")
                         .resizable()

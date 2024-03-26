@@ -9,6 +9,8 @@ import SwiftUI
 
 struct NavBarView: View {
     
+    @EnvironmentObject var order : Order
+    
     @State var selectedTab: Int = 0
     @State var selectedCategory: String = ""
     
@@ -41,6 +43,7 @@ struct NavBarView: View {
                     Text("My Cart")
                 }
                 .tag(3)
+                .badge(order.items.count)
             
             ProfileView()
                 .tabItem {

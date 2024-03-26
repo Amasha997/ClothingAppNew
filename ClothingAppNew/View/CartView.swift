@@ -8,8 +8,41 @@
 import SwiftUI
 
 struct CartView: View {
+    
+    @EnvironmentObject var order: Order
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        
+        NavigationStack{
+            ZStack{
+                VStack{
+                    List{
+                        ForEach(order.items){product in
+                            ProductRawCell(product: product)
+                            
+                        }
+                        //.onDelete(perform: order.deleteItems)
+                                    
+                    }
+                    .listStyle(PlainListStyle())
+//                    .listRowSeparator(.hidden)
+                    
+                
+                    Button{
+                        
+                    } label: {
+                        Text("Confirm order")
+                    }
+                    .padding(.bottom, 25)
+                }
+                
+                if order.items.isEmpty {
+                    EmptyStateView(imageName: "PlaceHolder", lable: "You have no items in your cart")
+                }
+            }
+            
+            .navigationTitle("Cart")
+        }
     }
 }
 

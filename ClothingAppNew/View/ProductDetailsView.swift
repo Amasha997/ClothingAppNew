@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ProductDetailsView: View {
 
+    @EnvironmentObject var order: Order
     
     let product: Product
     @Binding var isShowingDetails: Bool
@@ -120,7 +121,10 @@ struct ProductDetailsView: View {
             
                 Spacer()
             
-                Button(action: {}, label: {
+                Button(action: {
+                    order.add(product)
+                    isShowingDetails = false
+                }, label: {
                     Text("Add to Cart")
                         .padding()
                         .padding(.horizontal)
