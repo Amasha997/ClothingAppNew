@@ -16,14 +16,21 @@ struct CartView: View {
         NavigationStack{
             ZStack{
                 VStack{
-                    List{
-                        ForEach(order.items){product in
-                            ProductRawCell(product: product)
-                            
+                    NavigationStack {
+                        List{
+                            ForEach(order.items){product in
+                                ProductRawCell(product: product)
+                                
+                            }
+                            .onDelete{indexSet in
+                                order.items.remove(atOffsets: indexSet)
+                            }
                         }
-                        //.onDelete(perform: order.deleteItems)
-                                    
+                        .toolbar {
+                            EditButton()
+                        }
                     }
+                    
                     .listStyle(PlainListStyle())
 //                    .listRowSeparator(.hidden)
                     
