@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ProfileView: View {
+    
+    @State var isAlert:Bool = false
     var body: some View {
         ZStack{
             VStack{
@@ -24,8 +26,12 @@ struct ProfileView: View {
                                 .foregroundStyle(.black)
                                 .fontWeight(.medium)
                             
-                            Image(systemName: "square.and.pencil")
-                                .foregroundColor(Color("primary color"))
+                            Button(action: {isAlert = true}, label: {
+                                Image(systemName: "square.and.pencil")
+                                    .foregroundColor(Color("primary color"))
+                            })
+                            
+                           
                             
                             Spacer()
                         }
@@ -52,6 +58,7 @@ struct ProfileView: View {
                     LazyVStack{
                         VStack {
                             
+                            
 //------------------------------------------Account - My Account---------------------------------------
                             HStack (spacing: 16){
                                Image(systemName: "person.text.rectangle")
@@ -75,6 +82,7 @@ struct ProfileView: View {
                             Divider()
                             
 //------------------------------------------Account - My Account END---------------------------------------
+                            
                             
 //------------------------------------------Account - order---------------------------------------
                             
@@ -220,9 +228,12 @@ struct ProfileView: View {
                 .padding(.bottom, 25)
             }
             .padding(.bottom)
+           
         }
 //        .ignoresSafeArea()
+        
     }
+    
 }
 
 #Preview {

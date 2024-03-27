@@ -10,6 +10,7 @@ import SwiftUI
 struct NavBarView: View {
     
     @EnvironmentObject var order : Order
+    @EnvironmentObject var favorite : Favorite
     
     @State var selectedTab: Int = 0
     @State var selectedCategory: String = ""

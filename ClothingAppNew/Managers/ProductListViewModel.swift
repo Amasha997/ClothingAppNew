@@ -43,9 +43,13 @@ public class ProductListViewModel: ObservableObject {
     
     func getUniqueCategories(from products: [Product]) -> Set<String> {
         var uniqueCategories: Set<String> = Set()
+        
+        uniqueCategories.insert("All")
+        
         for product in products {
             uniqueCategories.insert(product.category)
         }
+        
         return uniqueCategories
     }
 }

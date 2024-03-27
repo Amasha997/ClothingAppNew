@@ -10,6 +10,7 @@ import SwiftUI
 struct SplashView: View {
     
     var order = Order()
+    var favorite = Favorite()
     
     @State private var isActive = false
     @State private var size = 0.8
@@ -19,7 +20,7 @@ struct SplashView: View {
         
         if(isActive){
             
-            NavBarView().environmentObject(order)
+            NavBarView().environmentObject(order).environmentObject(favorite)
         }
         else{
             VStack{

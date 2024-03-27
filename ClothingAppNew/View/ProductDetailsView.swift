@@ -10,6 +10,7 @@ import SwiftUI
 struct ProductDetailsView: View {
 
     @EnvironmentObject var order: Order
+    @EnvironmentObject var favorite: Favorite
     
     let product: Product
     @Binding var isShowingDetails: Bool
@@ -30,6 +31,7 @@ struct ProductDetailsView: View {
                 Text(product.category)
                     .opacity(0.6)
                             
+              
                 Text(product.name)
                     .font(.system(size: 24, weight: .semibold))
             
@@ -154,6 +156,21 @@ struct ProductDetailsView: View {
                     
             },
             alignment: .topLeading
+            
+        )
+        .overlay(
+            Button{
+                favorite.add(product)
+            } label: {
+                Image(systemName: "heart")
+                    .padding(.all, 30)
+                    .background(Color.white.opacity(0))
+                    .frame(width: 100, height: 100)
+                    .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
+                
+                    
+            },
+            alignment: .topTrailing
             
         )
     }

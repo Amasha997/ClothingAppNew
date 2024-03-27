@@ -16,7 +16,7 @@ struct ExploreView: View {
     @Binding var selectedCategory: String
     
     var filteredCategory: [Product] {
-        guard !selectedCategory.isEmpty else {return viewModel.products}
+        guard !selectedCategory.isEmpty && selectedCategory != "All" else {return viewModel.products}
         return viewModel.products.filter{ $0.category.localizedCaseInsensitiveContains(selectedCategory)}
     }
     

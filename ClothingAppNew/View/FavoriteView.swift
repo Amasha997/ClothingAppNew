@@ -8,8 +8,44 @@
 import SwiftUI
 
 struct FavoriteView: View {
+    
+    @EnvironmentObject var favorite: Favorite
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationStack{
+            ZStack{
+                VStack{
+                    NavigationStack {
+                        List{
+                            ForEach(favorite.favoriteItems.lazy){product in
+                                ProductRawCell(product: product)
+                                
+                            }
+                            .onDelete{indexSet in
+                                favorite.favoriteItems.remove(atOffsets: indexSet)
+                            }
+                        }
+                        .toolbar {
+                            EditButton()
+                        }
+                    }
+                    
+                    .listStyle(PlainListStyle())
+                    //                    .listRowSeparator(.hidden)
+                    
+                    
+                    
+                    
+                    .navigationTitle("Favorite")
+                }
+                
+                if favorite.favoriteItems.isEmpty {
+                    FavoriteEmptyStateView(imageName: "empty wish", lable: "Your Wishlist is empty")
+                }
+                
+                    
+            }
+        }
     }
 }
 
