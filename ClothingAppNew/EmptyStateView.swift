@@ -24,10 +24,20 @@ struct EmptyStateView: View {
                     .frame(height: 190)
                 
                 Text(lable)
-                    .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                    
+                    .font(.system(size: 24, weight: .semibold))
+                    .foregroundStyle(.black)
                     .fontWeight(.semibold)
                     .multilineTextAlignment(.center)
-                    .foregroundColor(.secondary)
+                    .padding()
+                
+                
+                Text("Looks like you haven't made \nyour choice yet...")
+                    
+                    .font(.system(size: 16, weight: .semibold))
+                    .foregroundStyle(.gray)
+                    .fontWeight(.light)
+                    .multilineTextAlignment(.center)
                 
             }
         }
@@ -35,5 +45,5 @@ struct EmptyStateView: View {
 }
 
 #Preview {
-    EmptyStateView(imageName: "PlaceHolder", lable: "You don't have any items in the cart")
+    EmptyStateView(imageName: "empty cart", lable: "Your cart is empty")
 }

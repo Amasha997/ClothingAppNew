@@ -69,8 +69,13 @@ struct ProductRawCell: View {
             }
             Spacer()
             
-            Image(systemName: "trash")
-                .foregroundColor(.red)
+            Button(action: {
+//                order.deleteItems(at: product.id)
+            }, label: {
+                Image(systemName: "trash")
+                    .foregroundColor(.red)
+            })
+            
 //                .onTapGesture {
 //                    order.deleteItems(at: product.id)
 //                }

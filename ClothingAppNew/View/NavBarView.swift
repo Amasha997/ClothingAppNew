@@ -25,7 +25,7 @@ struct NavBarView: View {
             
             ExploreView(selectedProduct: MockData.sampleProduct, selectedCategory: $selectedCategory)
                 .tabItem {
-                    Image(systemName: "doc.text")
+                    Image(systemName: "safari.fill")
                     Text("Explore")
                 }
                 .tag(1)
@@ -52,7 +52,7 @@ struct NavBarView: View {
                 }
                 .tag(4)
         }
-        .accentColor(.black)
+        .accentColor(Color("primary color"))
         
         .navigationTitle("")
         .navigationBarBackButtonHidden(true)

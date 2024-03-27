@@ -9,7 +9,15 @@ import SwiftUI
 
 struct ProfileView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ZStack{
+            VStack{
+                HStack{
+                    Image("profile image")
+                        .resizable()
+                        .frame(width: 60,height: 60)
+                }
+            }
+        }
     }
 }
 

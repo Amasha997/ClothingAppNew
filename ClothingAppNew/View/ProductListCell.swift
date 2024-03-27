@@ -58,6 +58,7 @@ struct ProductListCell: View {
                 .cornerRadius(20)
             }
             
+            
         
         }
         .padding(15)
