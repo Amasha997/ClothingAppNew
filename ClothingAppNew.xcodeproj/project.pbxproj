@@ -15,6 +15,7 @@
 		004FA3CD2BA99D3600517410 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 004FA3CC2BA99D3600517410 /* Launch Screen.storyboard */; };
 		004FA3CF2BA99EC500517410 /* ButtonUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004FA3CE2BA99EC500517410 /* ButtonUI.swift */; };
 		004FA3D12BA99F3800517410 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004FA3D02BA99F3800517410 /* SplashView.swift */; };
+		00939A9C2BB5342E00B346B4 /* CheckoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00939A9B2BB5342E00B346B4 /* CheckoutView.swift */; };
 		260123932BABF56800B0F9E7 /* SearchTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260123922BABF56800B0F9E7 /* SearchTextField.swift */; };
 		265CC6122BA9BA0F00EF8B5C /* UIExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265CC6112BA9BA0F00EF8B5C /* UIExtension.swift */; };
 		265CC6142BA9BECE00EF8B5C /* NavBarView in Sources */ = {isa = PBXBuildFile; fileRef = 265CC6132BA9BECE00EF8B5C /* NavBarView */; };
@@ -51,6 +52,7 @@
 		004FA3CC2BA99D3600517410 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		004FA3CE2BA99EC500517410 /* ButtonUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonUI.swift; sourceTree = "<group>"; };
 		004FA3D02BA99F3800517410 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
+		00939A9B2BB5342E00B346B4 /* CheckoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutView.swift; sourceTree = "<group>"; };
 		260123922BABF56800B0F9E7 /* SearchTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTextField.swift; sourceTree = "<group>"; };
 		265CC6112BA9BA0F00EF8B5C /* UIExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIExtension.swift; sourceTree = "<group>"; };
 		265CC6132BA9BECE00EF8B5C /* NavBarView */ = {isa = PBXFileReference; lastKnownFileType = text; path = NavBarView; sourceTree = "<group>"; };
@@ -157,6 +159,7 @@
 				265CC61D2BA9C30C00EF8B5C /* ProfileView.swift */,
 				265CC61F2BA9C35E00EF8B5C /* NavBarView.swift */,
 				26F895642BAD4DC9005CEC9D /* ProductDetailsView.swift */,
+				00939A9B2BB5342E00B346B4 /* CheckoutView.swift */,
 				004FA3C82BA99CA300517410 /* Login */,
 				26DEBA5D2BAE9478007DF9B3 /* ProductListCell.swift */,
 			);
@@ -272,6 +275,7 @@
 			files = (
 				004FA3B82BA99B8D00517410 /* ContentView.swift in Sources */,
 				26D403F22BB2CF6F0081EEC8 /* CartManager.swift in Sources */,
+				00939A9C2BB5342E00B346B4 /* CheckoutView.swift in Sources */,
 				265CC6182BA9C2D200EF8B5C /* ExploreView.swift in Sources */,
 				26601D5A2BB405E700CEB9C5 /* FavoriteModel.swift in Sources */,
 				26DEBA5E2BAE9478007DF9B3 /* ProductListCell.swift in Sources */,

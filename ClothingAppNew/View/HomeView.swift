@@ -117,7 +117,7 @@ struct HomeView: View {
                    
                         }
                         .padding(10)
-                        .frame(width: 120, height: 60)
+                        .frame(width: 90, height: 40)
 //                        .overlay(
 //                            RoundedRectangle(cornerRadius: 10)
 //                                .foregroundColor(Color("primary color").opacity(0.1))

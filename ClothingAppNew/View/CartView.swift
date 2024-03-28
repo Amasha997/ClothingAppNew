@@ -10,6 +10,7 @@ import SwiftUI
 struct CartView: View {
     
     @EnvironmentObject var order: Order
+    @State var checkout :Bool = false
     
     var body: some View {
         
@@ -101,7 +102,7 @@ struct CartView: View {
 //                        Text("Confirm order")
 //                    }
                     Button(action: {
-                        
+                        checkout = true
                     }, label: {
                         Text("Checkout")
                             .padding()
@@ -114,12 +115,18 @@ struct CartView: View {
                     .padding(.bottom, 25)
                 }
                 
+                
                 if order.items.isEmpty {
                     EmptyStateView(imageName: "empty cart", lable: "Your cart is empty")
                 }
+                
+//                if checkout {
+//                    CheckoutView()
+//                }
             }
             
             .navigationTitle("Cart")
+            
         }
     }
 }
