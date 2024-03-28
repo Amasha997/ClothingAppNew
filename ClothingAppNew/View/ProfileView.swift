@@ -9,7 +9,8 @@ import SwiftUI
 
 struct ProfileView: View {
     
-    @State var isAlert:Bool = false
+    @State var showingAlert:Bool = false
+    
     var body: some View {
         ZStack{
             VStack{
@@ -26,7 +27,7 @@ struct ProfileView: View {
                                 .foregroundStyle(.black)
                                 .fontWeight(.medium)
                             
-                            Button(action: {isAlert = true}, label: {
+                            Button(action: {showingAlert = true}, label: {
                                 Image(systemName: "square.and.pencil")
                                     .foregroundColor(Color("primary color"))
                             })
@@ -72,10 +73,13 @@ struct ProfileView: View {
                                     .fontWeight(.medium)
                                     .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
                                 
-                                Image(systemName: "chevron.right")
-                                     .resizable()
-                                     .scaledToFit()
-                                     .frame(width: 16, height: 16)
+                                Button(action: {showingAlert = true}, label: {
+                                    Image(systemName: "chevron.right")
+                                         .resizable()
+                                         .scaledToFit()
+                                         .frame(width: 16, height: 16)
+                                })
+                                
                                 
                             }
                             .padding(20)
@@ -98,10 +102,12 @@ struct ProfileView: View {
                                     .fontWeight(.medium)
                                     .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
                                 
-                                Image(systemName: "chevron.right")
-                                     .resizable()
-                                     .scaledToFit()
-                                     .frame(width: 16, height: 16)
+                                Button(action: {showingAlert = true}, label: {
+                                    Image(systemName: "chevron.right")
+                                         .resizable()
+                                         .scaledToFit()
+                                         .frame(width: 16, height: 16)
+                                })
                                 
                             }
                             .padding(20)
@@ -123,10 +129,12 @@ struct ProfileView: View {
                                     .fontWeight(.medium)
                                     .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
                                 
-                                Image(systemName: "chevron.right")
-                                     .resizable()
-                                     .scaledToFit()
-                                     .frame(width: 16, height: 16)
+                                Button(action: {showingAlert = true}, label: {
+                                    Image(systemName: "chevron.right")
+                                         .resizable()
+                                         .scaledToFit()
+                                         .frame(width: 16, height: 16)
+                                })
                                 
                             }
                             .padding(20)
@@ -148,11 +156,12 @@ struct ProfileView: View {
                                     .fontWeight(.medium)
                                     .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
                                 
-                                Image(systemName: "chevron.right")
-                                     .resizable()
-                                     .scaledToFit()
-                                     .frame(width: 16, height: 16)
-                                
+                                Button(action: {showingAlert = true}, label: {
+                                    Image(systemName: "chevron.right")
+                                         .resizable()
+                                         .scaledToFit()
+                                         .frame(width: 16, height: 16)
+                                })
                             }
                             .padding(20)
                             Divider()
@@ -173,10 +182,12 @@ struct ProfileView: View {
                                     .fontWeight(.medium)
                                     .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
                                 
-                                Image(systemName: "chevron.right")
-                                     .resizable()
-                                     .scaledToFit()
-                                     .frame(width: 16, height: 16)
+                                Button(action: {showingAlert = true}, label: {
+                                    Image(systemName: "chevron.right")
+                                         .resizable()
+                                         .scaledToFit()
+                                         .frame(width: 16, height: 16)
+                                })
                                 
                             }
                             .padding(20)
@@ -198,10 +209,12 @@ struct ProfileView: View {
                                     .fontWeight(.medium)
                                     .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
                                 
-                                Image(systemName: "chevron.right")
-                                     .resizable()
-                                     .scaledToFit()
-                                     .frame(width: 16, height: 16)
+                                Button(action: {showingAlert = true}, label: {
+                                    Image(systemName: "chevron.right")
+                                         .resizable()
+                                         .scaledToFit()
+                                         .frame(width: 16, height: 16)
+                                })
                                 
                             }
                             .padding(20)
@@ -217,7 +230,7 @@ struct ProfileView: View {
                 Button(action: {
                     
                 }, label: {
-                    Text("Logout")
+                    Text("LogIn")
                         .padding()
                         .padding(.horizontal)
                         .frame(width: 350, height: 60)
@@ -228,6 +241,9 @@ struct ProfileView: View {
                 .padding(.bottom, 25)
             }
             .padding(.bottom)
+            .alert("Please create an account before this action", isPresented: $showingAlert) {
+                        Button("OK", role: .cancel) { }
+                    }
            
         }
 //        .ignoresSafeArea()
