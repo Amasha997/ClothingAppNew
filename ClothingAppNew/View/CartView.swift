@@ -113,6 +113,7 @@ struct CartView: View {
                             .foregroundColor(.white)
                         })
                     .padding(.bottom, 25)
+                    .disabled(checkout)
                 }
                 
                 
@@ -120,14 +121,15 @@ struct CartView: View {
                     EmptyStateView(imageName: "empty cart", lable: "Your cart is empty")
                 }
                 
-//                if checkout {
-//                    CheckoutView()
-//                }
+                if checkout {
+                    CheckoutView(checkOut: $checkout)
+                }
             }
             
             .navigationTitle("Cart")
             
         }
+        
     }
 }
 
