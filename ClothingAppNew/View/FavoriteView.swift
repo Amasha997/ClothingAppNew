@@ -46,6 +46,9 @@ struct FavoriteView: View {
                     
             }
         }
+        .onAppear{
+            favorite.retrieveFavorites()
+        }
     }
 }
 

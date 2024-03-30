@@ -16,6 +16,19 @@ struct Product: Decodable, Identifiable{
     let size: String
     let price: Double
     let color: String
+    
+    func toDictionary() -> [String: Any] {
+              return [
+                  "id": id,
+                  "name": name,
+                  "category": category,
+                  "imageURL":imageURL,
+                  "description": description,
+                  "size": size,
+                  "price": price,
+                  "color": color
+              ]
+          }
 }
 
 struct ProductResponse: Decodable {

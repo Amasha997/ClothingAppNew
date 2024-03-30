@@ -129,6 +129,9 @@ struct CartView: View {
             .navigationTitle("Cart")
             
         }
+        .onAppear{
+            order.retrieveOrder()
+        }
         
     }
 }
