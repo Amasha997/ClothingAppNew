@@ -13,24 +13,14 @@ struct CheckoutView: View {
     @EnvironmentObject var order: Order
     
     @State var orderComplete: Bool = false
+    @State var showingAlert:Bool = false
     
     var body: some View {
         NavigationStack {
             
             
                         ScrollView (.vertical, showsIndicators: false){
-            //                List{
-            //                    ForEach(order.items){product in
-            //                        Text("Hello")
-            //
-            //                    }
-            //                    .onDelete{indexSet in
-            //                        order.items.remove(atOffsets: indexSet)
-            //                    }
-            //                }
-            //                .toolbar {
-            //                    EditButton()
-             //              }
+
             
             VStack{
                 HStack {
@@ -156,7 +146,7 @@ struct CheckoutView: View {
                         .fontWeight(.light)
                         .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
                     
-                    Button(action: {}, label: {
+                    Button(action: {showingAlert = true}, label: {
                         Image(systemName: "chevron.right")
                              .resizable()
                              .scaledToFit()
@@ -183,7 +173,7 @@ struct CheckoutView: View {
                         .fontWeight(.light)
                         .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
                     
-                    Button(action: {}, label: {
+                    Button(action: {showingAlert = true}, label: {
                         Image(systemName: "chevron.right")
                              .resizable()
                              .scaledToFit()
@@ -257,7 +247,7 @@ struct CheckoutView: View {
                             
             Button(action: {
         
-                orderComplete = true
+                showingAlert = true
             }, label: {
                 Text("Place to order")
                     .padding()
@@ -301,11 +291,15 @@ struct CheckoutView: View {
            
             
         )
-        .alert("Your order placed sucessfully!", isPresented: $orderComplete ) {
+        .alert("Please create an account before this action", isPresented: $showingAlert) {
                     Button("OK", role: .cancel) { 
                         checkOut = false
                         order.items.removeAll()
                     }
+                }
+        
+        .alert("Please create an account before this action", isPresented: $showingAlert) {
+                    Button("OK", role: .cancel) { }
                 }
        
 
