@@ -18,7 +18,7 @@ struct CheckoutView: View {
         NavigationStack {
             
             
-                        ScrollView {
+                        ScrollView (.vertical, showsIndicators: false){
             //                List{
             //                    ForEach(order.items){product in
             //                        Text("Hello")
@@ -140,15 +140,20 @@ struct CheckoutView: View {
                 }
                 
                 HStack (spacing: 16){
-                   Image(systemName: "location.circle")
+                   Image(systemName: "paperplane.fill")
                         .resizable()
                         .scaledToFit()
-                        .frame(width: 24, height: 24)
+                        .frame(width: 16, height: 16)
+                        .frame(width: 40, height: 40)
+                        .background(Color("search color"))
+                        .cornerRadius(20)
+                        .foregroundColor(.gray)
                     
                     Text("Delivery Address")
                         .font(.system(size: 18, weight: .semibold))
                         .foregroundStyle(.black)
-                        .fontWeight(.medium)
+                        .opacity(0.3)
+                        .fontWeight(.light)
                         .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
                     
                     Button(action: {}, label: {
@@ -160,18 +165,22 @@ struct CheckoutView: View {
                     
                 }
                 .padding(.top,10)
-                Divider()
                 
                 HStack (spacing: 16){
-                   Image(systemName: "phone.circle")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 24, height: 24)
+                    Image(systemName: "phone.arrow.up.right.fill")
+                         .resizable()
+                         .scaledToFit()
+                         .frame(width: 16, height: 16)
+                         .frame(width: 40, height: 40)
+                         .background(Color("search color"))
+                         .cornerRadius(20)
+                         .foregroundColor(.gray)
                     
                     Text("Contact Number")
                         .font(.system(size: 18, weight: .semibold))
                         .foregroundStyle(.black)
-                        .fontWeight(.medium)
+                        .opacity(0.3)
+                        .fontWeight(.light)
                         .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
                     
                     Button(action: {}, label: {
@@ -250,13 +259,13 @@ struct CheckoutView: View {
         
                 orderComplete = true
             }, label: {
-            Text("Place Order")
-                .padding()
-                .padding(.horizontal)
-                .frame(width: 200, height: 30)
-                 .background(Color("primary color"))
-                .cornerRadius(/*@START_MENU_TOKEN@*/3.0/*@END_MENU_TOKEN@*/)
-                .foregroundColor(.white)
+                Text("Place to order")
+                    .padding()
+                    .padding(.horizontal)
+                    .frame(width: 200, height: 60)
+                    .background(Color("primary color"))
+                    .cornerRadius(/*@START_MENU_TOKEN@*/3.0/*@END_MENU_TOKEN@*/)
+                    .foregroundColor(.white)
             })
         .padding(.bottom, 25)
                             

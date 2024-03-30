@@ -137,7 +137,7 @@ struct HomeView: View {
                     
 
                     
-//New Arrival
+//------------------------------------------New Arrival ---------------------------------------
                     HStack {
                         Text("New Arrival")
                             .font(.system(size: 24, weight: .semibold))
@@ -168,9 +168,10 @@ struct HomeView: View {
                     .padding(.horizontal, 20)
                     .padding(.vertical, -20)
                 
-//New Arrival End
+//------------------------------------------New Arrival End---------------------------------------
                     
- // Best Selling Section
+                    
+//------------------------------------------Best Selling---------------------------------------
                     
                     HStack {
                         Text("Best Selling")
@@ -201,9 +202,9 @@ struct HomeView: View {
                     .padding(.horizontal, 20)
                     .padding(.vertical, -20)
                     
-// Best Selling END
+//------------------------------------------Best Selling End ---------------------------------------
                     
-// Products
+//------------------------------------------Product list ---------------------------------------
                     
                     HStack {
                         Text("Most Popular")
@@ -231,7 +232,8 @@ struct HomeView: View {
                     
                     .padding(.vertical, 10)
                     
-// Products END
+//------------------------------------------Product End ---------------------------------------
+                    
                     
                 }
                 .disabled(viewModel.isShowingDetails)
